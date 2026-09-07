@@ -1,0 +1,1591 @@
+/* ==========================================================================
+   ZORO - Main Home Page Stylesheet
+   Flipkart-Inspired Color Palette & Advanced Interactive UI Effects
+   ========================================================================== */
+
+
+/* --- NAVIGATION SECTION --- */
+.zoro-navbar-header {
+  background-color: var(--zoro-blue);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition-normal);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.zoro-navbar-header.glassmorphic {
+  background: rgba(40, 116, 240, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.zoro-nav-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Logo & Plus Badge */
+.zoro-brand-wrapper {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.zoro-brand-name {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 900;
+  font-style: italic;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.zoro-brand-plus {
+  font-size: 11px;
+  font-weight: 600;
+  font-style: italic;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+.zoro-plus-tag {
+  color: var(--zoro-yellow);
+  font-weight: 800;
+}
+
+.zoro-plus-icon {
+  color: var(--zoro-yellow);
+  font-size: 11px;
+}
+
+/* Search Bar */
+.zoro-search-box {
+  flex: 1;
+  max-width: 600px;
+  position: relative;
+}
+
+.zoro-search-input-group {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 4px 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: var(--transition-fast);
+}
+
+.zoro-search-input-group:focus-within {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.zoro-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 8px 6px;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.zoro-search-btn {
+  background: transparent;
+  color: var(--zoro-blue);
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+}
+
+/* Live Search Suggestions Dropdown */
+.zoro-search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  z-index: 1010;
+}
+
+.zoro-search-item {
+  padding: 10px 16px;
+  font-size: 13.5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.zoro-search-item:hover {
+  background-color: var(--zoro-blue-light);
+  color: var(--zoro-blue-dark);
+}
+
+/* Nav Action Items */
+.zoro-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.zoro-login-btn {
+  background-color: #ffffff;
+  color: var(--zoro-blue);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 7px 32px;
+  border-radius: 2px;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.zoro-login-btn:hover {
+  background-color: #f7f9fd;
+  color: var(--zoro-blue-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.zoro-nav-link {
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  position: relative;
+}
+
+.zoro-nav-link:hover {
+  color: var(--zoro-yellow);
+}
+
+.zoro-badge-count {
+  background-color: var(--zoro-orange);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 2px;
+}
+
+/* Category Strip Bar */
+.zoro-cat-strip {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.zoro-cat-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.zoro-cat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  padding: 4px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.zoro-cat-item:hover {
+  color: var(--zoro-blue);
+  transform: translateY(-2px);
+}
+
+.zoro-cat-icon {
+  font-size: 20px;
+  color: var(--zoro-blue);
+}
+
+.zoro-hero-section {
+  max-width: 1320px;
+  margin: 16px auto;
+  padding: 0 16px;
+  display: block;
+}
+
+/* Main Hero Carousel */
+.zoro-carousel-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  background-color: #0b0f19;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  min-height: 340px;
+  box-shadow: var(--shadow-md);
+  min-height: 440px;
+  height: 440px;
+  width: 100%;
+}
+
+.zoro-carousel-slide {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.zoro-carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  color: var(--text-dark);
+  width: 42px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 0 6px 6px 0;
+  transition: var(--transition-fast);
+  z-index: 5;
+}
+
+.zoro-carousel-nav-btn:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.zoro-carousel-nav-btn.prev { left: 0; border-radius: 0 6px 6px 0; }
+.zoro-carousel-nav-btn.next { right: 0; border-radius: 6px 0 0 6px; }
+
+.zoro-carousel-indicators {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+
+.zoro-indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.zoro-indicator-dot.active {
+  width: 24px;
+  border-radius: 6px;
+  background: var(--zoro-blue);
+}
+
+
+/* --- OFFER SECTION --- */
+.zoro-offer-section {
+  max-width: 1320px;
+  margin: 16px auto;
+  padding: 0 16px;
+}
+
+.zoro-offer-card-wrapper {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.zoro-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.zoro-section-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.zoro-section-title i {
+  color: var(--zoro-orange);
+}
+
+.zoro-view-all-btn {
+  background-color: var(--zoro-blue);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 4px;
+  transition: var(--transition-fast);
+}
+
+.zoro-view-all-btn:hover {
+  background-color: var(--zoro-blue-dark);
+  box-shadow: 0 2px 8px rgba(40, 116, 240, 0.4);
+}
+
+.zoro-offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.zoro-offer-item {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+.zoro-offer-item:hover {
+  border-color: var(--zoro-blue);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.zoro-offer-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--zoro-green);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.zoro-offer-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin: 10px 0;
+  transition: var(--transition-fast);
+}
+
+.zoro-offer-item:hover .zoro-offer-img {
+  transform: scale(1.08);
+}
+
+.zoro-offer-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.zoro-offer-discount {
+  color: var(--zoro-green);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.zoro-offer-sub {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* Stock Progress Bar */
+.zoro-stock-bar-bg {
+  width: 100%;
+  height: 5px;
+  background: #eee;
+  border-radius: 3px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.zoro-stock-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #fb641b, #ffe500);
+  border-radius: 3px;
+}
+
+/* --- FEATURED BENTO GRID SECTION (3D PERSPECTIVE) --- */
+.zoro-bento-section {
+  max-width: 1320px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.zoro-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 240px;
+  gap: 16px;
+  perspective: 1000px;
+}
+
+@media (max-width: 992px) {
+  .zoro-bento-grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 200px;
+  }
+}
+@media (max-width: 576px) {
+  .zoro-bento-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+}
+
+.zoro-bento-item {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.zoro-bento-item:hover {
+  transform: translateY(-6px) rotateX(2deg) rotateY(-2deg) scale(1.01);
+  box-shadow: 0 16px 35px rgba(40, 116, 240, 0.2);
+  z-index: 10;
+}
+
+.zoro-bento-1 { grid-column: span 8; grid-row: span 2; }
+.zoro-bento-2 { grid-column: span 4; grid-row: span 1; }
+.zoro-bento-3 { grid-column: span 4; grid-row: span 1; }
+.zoro-bento-4 { grid-column: span 6; grid-row: span 1; }
+.zoro-bento-5 { grid-column: span 6; grid-row: span 1; }
+
+@media (max-width: 992px) {
+  .zoro-bento-1 { grid-column: span 6; grid-row: span 2; }
+  .zoro-bento-2 { grid-column: span 6; grid-row: span 1; }
+  .zoro-bento-3 { grid-column: span 6; grid-row: span 1; }
+  .zoro-bento-4 { grid-column: span 3; grid-row: span 1; }
+  .zoro-bento-5 { grid-column: span 3; grid-row: span 1; }
+}
+
+.zoro-bento-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.zoro-bento-item:hover .zoro-bento-img {
+  transform: scale(1.08);
+}
+
+.zoro-bento-glass-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.zoro-bento-tag {
+  background: var(--zoro-yellow);
+  color: #000;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  text-transform: uppercase;
+}
+
+.zoro-bento-title {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.zoro-bento-desc {
+  font-size: 13px;
+  color: #e0e0e0;
+}
+
+/* --- PRODUCT SECTION --- */
+.zoro-product-section {
+  max-width: 1320px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.zoro-product-card-wrapper {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.zoro-product-tabs {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.zoro-tab-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: #f8f9fa;
+  border-radius: 20px;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.zoro-tab-btn.active, .zoro-tab-btn:hover {
+  background-color: var(--zoro-blue);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(40, 116, 240, 0.3);
+}
+
+.zoro-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.zoro-product-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.zoro-product-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--zoro-blue);
+  transform: translateY(-6px);
+}
+
+/* Heart Wishlist Toggle */
+.zoro-wishlist-toggle {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #aaa;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-fast);
+  z-index: 2;
+}
+
+.zoro-wishlist-toggle.active, .zoro-wishlist-toggle:hover {
+  color: var(--zoro-orange);
+  transform: scale(1.15);
+}
+
+.zoro-prod-img-container {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.zoro-prod-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.zoro-product-card:hover .zoro-prod-img {
+  transform: scale(1.08);
+}
+
+.zoro-assured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  font-weight: 800;
+  font-style: italic;
+  color: var(--zoro-blue-dark);
+  background: #f0f5ff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  width: fit-content;
+  margin-bottom: 8px;
+}
+
+.zoro-assured-badge i {
+  color: var(--zoro-yellow);
+}
+
+.zoro-prod-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  height: 38px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.zoro-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.zoro-rating-pill {
+  background-color: var(--zoro-green);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.zoro-rating-count {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.zoro-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.zoro-current-price {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.zoro-original-price {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.zoro-discount-tag {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--zoro-green);
+}
+
+.zoro-add-cart-btn {
+  width: 100%;
+  margin-top: 12px;
+  background-color: var(--zoro-yellow);
+  color: #000000;
+  font-weight: 800;
+  font-size: 13.5px;
+  padding: 9px;
+  border-radius: 4px;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.zoro-add-cart-btn:hover {
+  background-color: #f5dc00;
+  box-shadow: 0 4px 10px rgba(255, 229, 0, 0.4);
+}
+
+/* --- GALLERY SECTION (3D PERSPECTIVE LIGHTBOX) --- */
+.zoro-gallery-section {
+  max-width: 1320px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.zoro-gallery-card-wrapper {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.zoro-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  perspective: 1200px;
+}
+
+.zoro-gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+  height: 240px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+}
+
+.zoro-gallery-item:hover {
+  transform: translateY(-8px) rotateX(4deg) rotateY(-4deg) scale(1.02);
+  box-shadow: var(--shadow-3d);
+}
+
+.zoro-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.zoro-gallery-item:hover .zoro-gallery-img {
+  transform: scale(1.1);
+}
+
+.zoro-gallery-caption {
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 116, 240, 0.85);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 20px;
+  text-align: center;
+}
+
+.zoro-gallery-item:hover .zoro-gallery-caption {
+  opacity: 1;
+}
+
+/* Lightbox Modal */
+.zoro-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.zoro-lightbox-content {
+  max-width: 900px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.zoro-lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* --- TESTIMONIAL SECTION --- */
+.zoro-testimonial-section {
+  max-width: 1320px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.zoro-testimonial-card-wrapper {
+  background: linear-gradient(135deg, #1254bf 0%, #2874f0 100%);
+  border-radius: 12px;
+  padding: 36px 24px;
+  color: #ffffff;
+  box-shadow: var(--shadow-md);
+}
+
+.zoro-testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.zoro-testimonial-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition-normal);
+}
+
+.zoro-testimonial-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.zoro-testi-stars {
+  color: var(--zoro-yellow);
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.zoro-testi-quote {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #f0f4fc;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.zoro-testi-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 14px;
+}
+
+.zoro-avatar-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--zoro-yellow);
+  color: #000;
+  font-weight: 800;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoro-user-name {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.zoro-user-badge {
+  font-size: 11px;
+  color: var(--zoro-yellow);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* --- CONTACT & NEWSLETTER SECTION --- */
+.zoro-contact-section {
+  max-width: 1320px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.zoro-contact-card-wrapper {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .zoro-contact-card-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.zoro-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.zoro-newsletter-box {
+  background: var(--zoro-blue-light);
+  border: 1px solid #cce0ff;
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.zoro-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.zoro-form-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.zoro-form-input {
+  padding: 11px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.zoro-form-input:focus {
+  border-color: var(--zoro-blue);
+  box-shadow: 0 0 0 3px rgba(40, 116, 240, 0.15);
+}
+
+.zoro-submit-btn {
+  background-color: var(--zoro-orange);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 12px;
+  border-radius: 6px;
+  transition: var(--transition-fast);
+}
+
+.zoro-submit-btn:hover {
+  background-color: var(--zoro-orange-dark);
+  box-shadow: 0 4px 12px rgba(251, 100, 27, 0.35);
+}
+
+/* Quick FAQ Accordion */
+.zoro-faq-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.zoro-faq-header {
+  background: #f8f9fa;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.zoro-faq-body {
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.5;
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* --- FOOTER SECTION --- */
+.zoro-footer {
+  background-color: #172337;
+  color: #878787;
+  font-size: 12px;
+  margin-top: 40px;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.zoro-footer-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  text-align: center;
+  border-bottom: 1px solid #454d5e;
+}
+
+.zoro-footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.zoro-footer-heading {
+  color: #878787;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.zoro-footer-link {
+  color: #ffffff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: var(--transition-fast);
+}
+
+.zoro-footer-link:hover {
+  text-decoration: underline;
+  color: var(--zoro-yellow);
+}
+
+.zoro-footer-bottom {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 20px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  color: #ffffff;
+}
+
+.zoro-trust-feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--zoro-yellow);
+}
+
+/* Toast Notifications */
+.zoro-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--zoro-blue-dark);
+  color: #ffffff;
+  padding: 14px 22px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  z-index: 3000;
+  animation: float3D 3s ease-in-out infinite;
+}
+
+/* Quick View Modal */
+.zoro-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.zoro-modal-card {
+  background: #ffffff;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 576px) {
+/* ==========================================================================
+   FULL RESPONSIVE MEDIA QUERIES FOR PERFECT MOBILE & TABLET VIEW
+   ========================================================================== */
+
+/* Tablet Breakpoint (max-width: 992px) */
+@media (max-width: 992px) {
+  .zoro-nav-container {
+    padding: 10px 16px;
+    gap: 14px;
+  }
+
+  .zoro-hero-section {
+    padding: 0 12px;
+  }
+
+  .zoro-carousel-card {
+    min-height: 360px;
+    height: 360px;
+  }
+
+  .zoro-product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .zoro-contact-card-wrapper {
+    padding: 24px;
+    gap: 20px;
+  }
+}
+
+/* Main Mobile Breakpoint (max-width: 768px) */
+@media (max-width: 768px) {
+  /* --- Navigation Header --- */
+  .zoro-nav-container {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    padding: 8px 12px;
+  }
+
+  .zoro-brand-wrapper {
+    order: 1;
+  }
+
+  .zoro-brand-name {
+    font-size: 22px;
+  }
+
+  .zoro-nav-actions {
+    order: 2;
+    gap: 12px;
+  }
+
+  .zoro-seller-link {
+    display: none;
+  }
+
+  .zoro-login-btn {
+    padding: 5px 16px;
+    font-size: 13px;
+  }
+
+  .zoro-nav-link {
+    font-size: 13px;
+  }
+
+  .zoro-nav-label {
+    display: none;
+  }
+
+  .zoro-nav-link i {
+    font-size: 18px;
+  }
+
+  .zoro-search-box {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .zoro-search-input-group {
+    padding: 2px 10px;
+  }
+
+  .zoro-search-input {
+    font-size: 13px;
+    padding: 6px 4px;
+  }
+
+  /* --- Category Strip Bar --- */
+  .zoro-cat-strip {
+    box-shadow: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .zoro-cat-container {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .zoro-cat-item {
+    padding: 4px 8px;
+    font-size: 11.5px;
+  }
+
+  .zoro-cat-icon {
+    font-size: 18px;
+  }
+
+  /* --- Hero Carousel --- */
+  .zoro-hero-section {
+    margin: 10px auto;
+    padding: 0 8px;
+  }
+
+  .zoro-carousel-card {
+    min-height: 240px;
+    height: 240px;
+    border-radius: 8px;
+  }
+
+  .zoro-carousel-slide {
+    object-fit: fill;
+  }
+
+  .zoro-carousel-nav-btn {
+    width: 32px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .zoro-carousel-indicators {
+    bottom: 8px;
+  }
+
+  .zoro-indicator-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .zoro-indicator-dot.active {
+    width: 18px;
+  }
+
+  /* --- Offer Section --- */
+  .zoro-offer-section {
+    margin: 12px auto;
+    padding: 0 8px;
+  }
+
+  .zoro-offer-card-wrapper {
+    padding: 12px;
+  }
+
+  .zoro-section-title {
+    font-size: 16px;
+  }
+
+  .zoro-view-all-btn {
+    padding: 6px 12px;
+    font-size: 11.5px;
+  }
+
+  .zoro-offer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .zoro-offer-item {
+    padding: 10px;
+  }
+
+  .zoro-offer-img {
+    width: 100px;
+    height: 100px;
+    margin: 6px 0;
+  }
+
+  .zoro-offer-name {
+    font-size: 12.5px;
+  }
+
+  .zoro-offer-discount {
+    font-size: 12.5px;
+  }
+
+  .zoro-offer-badge {
+    font-size: 9.5px;
+    padding: 2px 5px;
+  }
+
+  /* --- Bento Grid --- */
+  .zoro-bento-section {
+    margin: 14px auto;
+    padding: 0 8px;
+  }
+
+  .zoro-bento-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+    gap: 10px;
+  }
+
+  .zoro-bento-1, .zoro-bento-2, .zoro-bento-3, .zoro-bento-4, .zoro-bento-5 {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+
+  .zoro-bento-glass-overlay {
+    padding: 14px;
+  }
+
+  .zoro-bento-title {
+    font-size: 17px;
+  }
+
+  .zoro-bento-desc {
+    font-size: 11.5px;
+  }
+
+  /* --- Product Section --- */
+  .zoro-product-section {
+    margin: 14px auto;
+    padding: 0 8px;
+  }
+
+  .zoro-product-card-wrapper {
+    padding: 12px;
+  }
+
+  .zoro-product-tabs {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .zoro-tab-btn {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+
+  .zoro-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .zoro-product-card {
+    padding: 10px;
+  }
+
+  .zoro-prod-img-container {
+    height: 130px;
+    margin-bottom: 8px;
+  }
+
+  .zoro-prod-title {
+    font-size: 12.5px;
+    height: 34px;
+  }
+
+  .zoro-current-price {
+    font-size: 15px;
+  }
+
+  .zoro-original-price {
+    font-size: 11.5px;
+  }
+
+  .zoro-add-cart-btn {
+    padding: 7px;
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  /* --- Gallery Section --- */
+  .zoro-gallery-section {
+    margin: 14px auto;
+    padding: 0 8px;
+  }
+
+  .zoro-gallery-card-wrapper {
+    padding: 12px;
+  }
+
+  .zoro-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .zoro-gallery-item {
+    height: 160px;
+  }
+
+  /* --- Testimonials Section --- */
+  .zoro-testimonial-section {
+    margin: 14px auto;
+    padding: 0 8px;
+  }
+
+  .zoro-testimonial-card-wrapper {
+    padding: 20px 14px;
+  }
+
+  .zoro-testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .zoro-testimonial-card {
+    padding: 16px;
+  }
+
+  .zoro-testi-quote {
+    font-size: 13px;
+  }
+
+  /* --- Contact Section --- */
+  .zoro-contact-section {
+    margin: 14px auto;
+    padding: 0 8px;
+  }
+
+  .zoro-contact-card-wrapper {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 20px;
+  }
+
+  .zoro-newsletter-box {
+    padding: 16px;
+  }
+
+  /* --- Footer --- */
+  .zoro-footer {
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+
+  .zoro-footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    padding: 0 12px 20px;
+  }
+
+  .zoro-footer-bottom {
+    padding: 16px 12px;
+  }
+
+  /* --- Toast & Modals --- */
+  .zoro-toast {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: 16px;
+    width: 90%;
+    justify-content: center;
+    font-size: 12.5px;
+    padding: 10px 16px;
+  }
+
+  .zoro-modal-card {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
+
+/* Small Mobile Breakpoint (max-width: 480px) */
+@media (max-width: 480px) {
+  .zoro-carousel-card {
+    min-height: 200px;
+    height: 200px;
+  }
+
+  .zoro-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .zoro-gallery-item {
+    height: 180px;
+  }
+
+  .zoro-footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
