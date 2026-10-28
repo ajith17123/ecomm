@@ -165,7 +165,16 @@ const Home = () => {
       <header className={`zoro-navbar-header ${isScrolled ? 'glassmorphic' : ''}`}>
         <div className="zoro-nav-container">
           {/* Logo & Plus Badge */}
-          <div className="zoro-brand-wrapper" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <div 
+            className="zoro-brand-wrapper" 
+            onClick={() => {
+              if (window.__lenis) {
+                window.__lenis.scrollTo(0, { duration: 1.2 });
+              } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+          >
             <span className="zoro-brand-name">Zoro</span>
             
           </div>
@@ -771,7 +780,7 @@ const Home = () => {
       {/* Quick View Product Modal */}
       {quickViewProduct && (
         <div className="zoro-modal-overlay" onClick={() => setQuickViewProduct(null)}>
-          <div className="zoro-modal-card" onClick={(e) => e.stopPropagation()}>
+          <div className="zoro-modal-card" data-lenis-prevent onClick={(e) => e.stopPropagation()}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img src={quickViewProduct.img} alt={quickViewProduct.name} style={{ maxWidth: '100%', maxHeight: 240, objectFit: 'contain' }} />
             </div>
@@ -805,7 +814,7 @@ const Home = () => {
       {/* Lightbox Modal */}
       {lightboxImg && (
         <div className="zoro-lightbox-overlay" onClick={() => setLightboxImg(null)}>
-          <div className="zoro-lightbox-content" onClick={(e) => e.stopPropagation()}>
+          <div className="zoro-lightbox-content" data-lenis-prevent onClick={(e) => e.stopPropagation()}>
             <div className="zoro-lightbox-close" onClick={() => setLightboxImg(null)}>
               <i className="bi bi-x-lg"></i>
             </div>
@@ -817,7 +826,7 @@ const Home = () => {
       {/* Login Modal */}
       {showLoginModal && (
         <div className="zoro-modal-overlay" onClick={() => setShowLoginModal(false)}>
-          <div className="zoro-modal-card" onClick={(e) => e.stopPropagation()} style={{ gridTemplateColumns: '1fr 1fr', padding: 0, overflow: 'hidden' }}>
+          <div className="zoro-modal-card" data-lenis-prevent onClick={(e) => e.stopPropagation()} style={{ gridTemplateColumns: '1fr 1fr', padding: 0, overflow: 'hidden' }}>
             <div style={{ background: '#2874f0', color: '#fff', padding: 32, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <div>
                 <h2 style={{ fontSize: 24, fontWeight: 900 }}>Login to Zoro</h2>
